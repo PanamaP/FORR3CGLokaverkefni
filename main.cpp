@@ -13,6 +13,9 @@ int main(){
     Thettir t = Thettir(901, 6, 0.001);
     t.prenta();
 
+    Thettir t2 = Thettir(904, 6, 0.00001);
+    t2.prenta();
+
     Ihlutir i = Ihlutir(902, 7);
     i.prenta();
 

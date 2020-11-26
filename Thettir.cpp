@@ -17,10 +17,10 @@ void Thettir::setRymd(double rymd){
 }
 
 void Thettir::prenta(){
-    if(this->rymd  == 0.001){
-        std::cout << "Þéttir: " << this->getNumer() << ", " << this->getStaerd() << ", " << "1mF" << std::endl;
-    } else if(this->rymd == 0.00001){
-        std::cout << "Þéttir: " << this->getNumer() << ", " << this->getStaerd() << ", " << "10µF" << std::endl;
+    if(this->rymd  >= 0.001){
+        std::cout << "Þéttir: " << this->getNumer() << ", " << this->getStaerd() << ", " << (this->rymd * 1000) << "mF" << std::endl;
+    } else if(this->rymd >= 0.00001){
+        std::cout << "Þéttir: " << this->getNumer() << ", " << this->getStaerd() << ", " << (this->rymd * 1000000) << "µF" << std::endl;
 
     }else
         std::cout << "Þéttir: " << this->getNumer() << ", " << this->getStaerd() << ", " << this->rymd << std::endl;
