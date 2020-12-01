@@ -16,5 +16,11 @@ class Ihlutir {
         int getStaerd();
         void setStaerd(int staerd);
         virtual void prenta();
+
+        bool operator<(Ihlutir& other);
+        bool operator>(Ihlutir& other);
+        bool operator<=(Ihlutir& other);
+        bool operator>=(Ihlutir& other);
+
         virtual ~Ihlutir() {}
 };
