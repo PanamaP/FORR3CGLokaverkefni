@@ -21,7 +21,7 @@ class allt {
         void listaLED(int numer, int staerd, std::string litur);
         void listaThettir(int numer, int staerd, double rymd);
         void listaVidnam(int numer, int staerd, int ohma);
-        Ihlutir* afskrahlut();
+        Ihlutir* saekjahlut(int numer);
         void prenta();
         ~allt();
 };

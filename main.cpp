@@ -2,11 +2,13 @@
 #include "Vidnam.h"
 #include "Thettir.h"
 #include "LED.h"
+#include "Allt.h"
 
 #include <iostream>
 using namespace std;
 
 int main(){
+    /*
     Vidnam v = Vidnam(900, 5, 220);
     v.prenta();
 
@@ -18,9 +20,17 @@ int main(){
 
     Ihlutir i = Ihlutir(902, 7);
     i.prenta();
-
+    */
     LED l = LED(903, 8, "Blár");
     l.prenta();
+    
+    
+    allt a;   
+    //a.saekjahlut(905)->prenta();
+
+    a.prenta();
+    
+
     /*
     LED(900, 5, "Rautt");
     LED(901, 5, "Gult");

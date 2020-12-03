@@ -15,7 +15,6 @@ allt::allt(int staerd){
 }
 
 void allt::listaIhlut(Ihlutir* ihlutir){
-    IhlutirNode* newNode = new IhlutirNode(ihlutir);
     // á að finna rétta sætið í fylkinu 
     //og setur á réttan stað í þeim keðjulista
     int index = this->hash(ihlutir->getNumer());
@@ -53,6 +52,48 @@ void allt::listaVidnam(int numer, int staerd, int ohma){
     this->listaIhlut(new Vidnam(numer, staerd, ohma));
 }
 
-Ihlutir* allt::afskrahlut();
-void allt::prenta();
-allt::~allt();
+Ihlutir* allt::saekjahlut(int numer){
+    int index = this->hash(numer);
+    if(this->table[index]->ihlutir->getNumer() == numer){
+        Ihlutir* skila = this->table[index]->ihlutir;
+        IhlutirNode* newHead = this->table[index]->next;
+        delete this->table[index];
+        this->table[index] = newHead;
+        return skila;
+    } else {
+        IhlutirNode* current = this->table[index];
+        IhlutirNode* prev = this->table[index];
+        while(current != nullptr && current->ihlutir->getNumer() != numer){
+            prev = current;
+            current = current->next;
+        }
+        if(current != nullptr){
+            Ihlutir* skila = current->ihlutir;
+            prev->next = current->next;
+            delete current;
+            return skila;
+        }
+    }
+    //return Ihlutir();
+}
+
+void allt::prenta(){
+    for(int i = 0; i < this->staerd; i++){
+        IhlutirNode* current = this->table[i];
+        while(current != nullptr){
+            std::cout << "Hylki " << i << ": ";
+            current->ihlutir->prenta();
+            current = current->next;
+        }
+    }
+}
+allt::~allt(){
+    IhlutirNode* newHead;
+    for(int i = 0; i < this->staerd; i++){
+        while(this->table[i] != nullptr){
+            newHead = this->table[i]->next;
+            delete this->table[i];
+            this->table[i] = newHead;
+        }
+    }
+}
