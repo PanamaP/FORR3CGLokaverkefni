@@ -5,8 +5,8 @@
 struct IhlutirNode {
     Ihlutir* ihlutir;
     IhlutirNode* next;
-    IhlutirNode(Ihlutir* nyrHlutur){
-        this->ihlutir = nyrHlutur;
+    IhlutirNode(Ihlutir* ihlutir){
+        this->ihlutir = ihlutir;
         this->next = nullptr;
     }
 };

@@ -9,19 +9,19 @@
 #include "Vidnam.h"
 #include "Thettir.h"
 
-class allt {
+class Allt {
     private:
         IhlutirNode** table;
         int staerd;
         int hash(int numer);
     public:
-        allt();
-        allt(int staerd);
+        Allt();
+        Allt(int staerd);
         void listaIhlut(Ihlutir* ihlutir);
         void listaLED(int numer, int staerd, std::string litur);
         void listaThettir(int numer, int staerd, double rymd);
         void listaVidnam(int numer, int staerd, int ohma);
         Ihlutir* saekjahlut(int numer);
         void prenta();
-        ~allt();
+        ~Allt();
 };

@@ -8,6 +8,19 @@
 using namespace std;
 
 int main(){
+
+
+    Allt a;
+
+    a.listaVidnam(901, 5, 4);
+
+    a.listaLED(902, 5, "red");
+    
+    a.listaThettir(903, 4, 0.0001);
+    
+    a.saekjahlut(902)->prenta();
+    
+    a.prenta();
     /*
     Vidnam v = Vidnam(900, 5, 220);
     v.prenta();
@@ -20,16 +33,10 @@ int main(){
 
     Ihlutir i = Ihlutir(902, 7);
     i.prenta();
-    */
+    
     LED l = LED(903, 8, "Blár");
-    l.prenta();
-    
-    
-    allt a;   
-    //a.saekjahlut(905)->prenta();
-
-    a.prenta();
-    
+    l.prenta(); 
+    */
 
     /*
     LED(900, 5, "Rautt");

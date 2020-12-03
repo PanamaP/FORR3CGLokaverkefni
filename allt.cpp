@@ -1,26 +1,26 @@
 #include "Allt.h"
 
-int allt::hash(int numer){
+int Allt::hash(int numer){
     return numer % this->staerd;
 }
 
-allt::allt(){
+Allt::Allt(){
     this->staerd = 5;
     this->table = new IhlutirNode*[this->staerd]();
 }
 
-allt::allt(int staerd){
+Allt::Allt(int staerd){
     this->staerd = staerd;
     this->table = new IhlutirNode*[this->staerd]();
 }
 
-void allt::listaIhlut(Ihlutir* ihlutir){
+void Allt::listaIhlut(Ihlutir* ihlutir){
     // á að finna rétta sætið í fylkinu 
     //og setur á réttan stað í þeim keðjulista
     int index = this->hash(ihlutir->getNumer());
     IhlutirNode* newNode = new IhlutirNode(ihlutir);
     if(this->table[index] == nullptr){
-        this->table[index] == newNode;
+        this->table[index] = newNode;
     } else {
         if(this->table[index]->ihlutir > newNode->ihlutir){
             newNode->next = this->table[index];
@@ -40,54 +40,53 @@ void allt::listaIhlut(Ihlutir* ihlutir){
 }
 
 
-void allt::listaLED(int numer, int staerd, std::string litur){
+void Allt::listaLED(int numer, int staerd, std::string litur){
     this->listaIhlut(new LED(numer, staerd, litur));
 }
 
-void allt::listaThettir(int numer, int staerd, double rymd){
+void Allt::listaThettir(int numer, int staerd, double rymd){
     this->listaIhlut(new Thettir(numer, staerd, rymd));
 }
 
-void allt::listaVidnam(int numer, int staerd, int ohma){
+void Allt::listaVidnam(int numer, int staerd, int ohma){
     this->listaIhlut(new Vidnam(numer, staerd, ohma));
 }
 
-Ihlutir* allt::saekjahlut(int numer){
+Ihlutir* Allt::saekjahlut(int numer){
     int index = this->hash(numer);
-    if(this->table[index]->ihlutir->getNumer() == numer){
-        Ihlutir* skila = this->table[index]->ihlutir;
-        IhlutirNode* newHead = this->table[index]->next;
-        delete this->table[index];
-        this->table[index] = newHead;
-        return skila;
-    } else {
-        IhlutirNode* current = this->table[index];
-        IhlutirNode* prev = this->table[index];
-        while(current != nullptr && current->ihlutir->getNumer() != numer){
-            prev = current;
-            current = current->next;
-        }
-        if(current != nullptr){
-            Ihlutir* skila = current->ihlutir;
-            prev->next = current->next;
-            delete current;
-            return skila;
+    
+    if(this->table[index]){
+        if(this->table[index]->ihlutir->getNumer() == numer){
+            return this->table[index]->ihlutir;
+        } else {
+            IhlutirNode* current = this->table[index];
+            IhlutirNode* prev = this->table[index];
+            while(current != nullptr && current->ihlutir->getNumer() != numer){
+                prev = current;
+                current = current->next;
+            }
+            if(current != nullptr){
+                Ihlutir* skila = current->ihlutir;
+                prev->next = current->next;
+                delete current;
+                return skila;
+            }
         }
     }
-    //return Ihlutir();
+    return nullptr;
 }
 
-void allt::prenta(){
+void Allt::prenta(){
     for(int i = 0; i < this->staerd; i++){
         IhlutirNode* current = this->table[i];
-        while(current != nullptr){
+        while(current){
             std::cout << "Hylki " << i << ": ";
             current->ihlutir->prenta();
             current = current->next;
         }
     }
 }
-allt::~allt(){
+Allt::~Allt(){
     IhlutirNode* newHead;
     for(int i = 0; i < this->staerd; i++){
         while(this->table[i] != nullptr){
