@@ -76,6 +76,65 @@ Ihlutir* Allt::saekjahlut(int numer){
     return nullptr;
 }
 
+
+Ihlutir* Allt::eydahlut(int numer){
+    int index = this->hash(numer);
+    
+    if(this->table[index]){
+        if(this->table[index]->ihlutir->getNumer() == numer){
+            Ihlutir* skila = this->table[index]->ihlutir;
+            IhlutirNode* newHead = this->table[index]->next;
+            delete this->table[index];
+            this->table[index] = newHead;
+            return skila;
+        } else {
+            IhlutirNode* current = this->table[index];
+            IhlutirNode* prev = this->table[index];
+            while(current != nullptr && current->ihlutir->getNumer() != numer){
+                prev = current;
+                current = current->next;
+            }
+            if(current != nullptr){
+                Ihlutir* skila = current->ihlutir;
+                prev->next = current->next;
+                delete current;
+                return skila;
+            }
+        }
+    }
+    return nullptr;
+}
+
+Ihlutir* Allt::breytaLit(int numer, std::string nyrLitur){
+    int index = this->hash(numer);
+
+    if(this->table[index]){
+        if(this->table[index]->ihlutir->getNumer() == numer){
+            // ekkert sem tekkar hvort þetta se annað en LED
+            // eyðir og byr til nytt, ekki besta leiðin
+            // en leiðin sem ég mun nota. -> notandi látinn vita
+            eydahlut(numer);
+            this->listaIhlut(new LED(numer, staerd, nyrLitur));
+            return this->table[index]->ihlutir;
+        } else {
+            IhlutirNode* current = this->table[index];
+            IhlutirNode* prev = this->table[index];
+            while(current != nullptr && current->ihlutir->getNumer() != numer){
+                prev = current;
+                current = current->next;
+            }
+            if(current != nullptr){
+                Ihlutir* skila = current->ihlutir;
+                prev->next = current->next;
+                delete current;
+                return skila;
+            }
+        }
+    }
+    return nullptr;
+}
+
+
 void Allt::prenta(){
     for(int i = 0; i < this->staerd; i++){
         IhlutirNode* current = this->table[i];

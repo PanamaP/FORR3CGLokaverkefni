@@ -30,6 +30,7 @@ void Ihlutir::prenta(){
     std::cout << "Íhlutur: " << this->numer << ", " << this->staerd << std::endl;
 }
 
+
 bool Ihlutir::operator<(Ihlutir& other){
     if(this->numer == other.numer){
         return this->staerd < other.staerd;

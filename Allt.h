@@ -22,6 +22,8 @@ class Allt {
         void listaThettir(int numer, int staerd, double rymd);
         void listaVidnam(int numer, int staerd, int ohma);
         Ihlutir* saekjahlut(int numer);
+        Ihlutir * eydahlut(int numer);
+        Ihlutir* breytaLit(int numer, std::string nyrLitur);
         void prenta();
         ~Allt();
 };
