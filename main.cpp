@@ -83,13 +83,30 @@ int main(){
             }
         } else if(skipun == "hjálp"){
             cout << "skrá" << endl;
-            cout << "skrá íhlutur númer stærð Litur/ohma/rýmd" << endl;
-            cout << "LED, Viðnám, Þéttir" << endl;
+            cout << "skráir íhluti." << endl;
+            cout << "template: skrá íhlutur númer stærð Litur/ohma/rýmd" << endl;
+            cout << "valkostir: LED, Viðnám, Þéttir" << endl;
             cout << "Dæmi: skrá LED 901 5 Grænn" << endl;
             cout << "" << endl;
 
             cout << "prenta" << endl;
             cout << "prentar alla skráða íhluti." << endl;
+            cout << "" << endl;
+
+            cout << "breyta" << endl;
+            cout << "breytir lit hjá íhlut." << endl;
+            cout << "passa að íhlutur sé LED, þetta mun skrifa yfir fyrra fallið annars." << endl;
+            cout << "template: breyta númer litur" << endl;
+            cout << "valkostir: allir litir" << endl;
+            cout << "Dæmi: breyta 901 blár já" << endl;
+            cout << "" << endl;
+
+            cout << "eyða" << endl;
+            cout << "eyðir íhlut." << endl;
+            cout << "template: eyða númer" << endl;
+            cout << "Dæmi: eyða 901" << endl;
+            cout << "" << endl;
+    
         }
 
 
