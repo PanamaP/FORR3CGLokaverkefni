@@ -1,4 +1,6 @@
 **Dagbók**
+------------------------------------
+
 
 24/11 - Bjó til grunn inna gitub, klassar búnir til.
 
@@ -22,8 +24,42 @@
 
 
 **Skýrsla**
+------------------------------------
+
 
 Ég byrjaði að skrifa klassa sem sá um grunninn á hinum, svo fór ég í það að hanna hashmap table sem var flóknara en ég bjóst við í byrjun en það kom út rétt í lokinn.
 Það var tímafrekt að fara sú leið en það tókst. notendaviðmótið tók ekki það langan tíma en ég lenti í smá veseni þar sem ég svo leysti. Einfalt forrit sem sér um skráningu íhlutar. Eyðingar fallið er ekki öruggt að nota því það yfirskrifa íhlutinn sem var fyrir(eyðir og býr til nýjan) en notandi er látinn staðfesta breytinga áður en hún er gerð.
 
 Forritið býr til, eyðir, breytir lit, prentar og er með hjálp skipun sem sýnir notanda valmöguleikana sem hann hefur og hvernig nota eigi skipanir.
+
+-Notendaviðmót-
+------------------------------------
+
+**skrá**
+ 
+skráir íhluti.
+template: skrá íhlutur númer stærð Litur/ohma/rýmd.
+valkostir: LED, Viðnám, Þéttir
+Dæmi: skrá LED 901 5 Grænn
+
+
+**prenta**
+
+prentar alla skráða íhluti.
+
+
+**breyta**
+
+breytir lit hjá íhlut.
+passa að íhlutur sé LED, þetta mun skrifa yfir fyrra fallið annars.
+template: breyta númer litur.
+valkostir: allir litir.
+Dæmi: breyta 901 blár já
+
+
+**eyða**
+
+eyðir íhlut.
+template: eyða númer
+Dæmi: eyða 901
+
