@@ -63,3 +63,7 @@ eyðir íhlut.
 template: eyða númer
 Dæmi: eyða 901
 
+**Hjálp**
+
+prentar út upplýsingar um valkostina fyrir ofan.
+
