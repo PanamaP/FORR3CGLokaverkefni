@@ -21,5 +21,9 @@
     Ég er búinn með kringum 80% af verkefninu og er sáttur með það. Ég vildi þó að ég hefði haft meiri tíma út önnina til að læra betur á c++ og mun mjög líklega taka auka udemy course til að ná þessu betur.
 
 
+**Skýrsla**
 
-    
+Ég byrjaði að skrifa klassa sem sá um grunninn á hinum, svo fór ég í það að hanna hashmap table sem var flóknara en ég bjóst við í byrjun en það kom út rétt í lokinn.
+Það var tímafrekt að fara sú leið en það tókst. notendaviðmótið tók ekki það langan tíma en ég lenti í smá veseni þar sem ég svo leysti. Einfalt forrit sem sér um skráningu íhlutar. Eyðingar fallið er ekki öruggt að nota því það yfirskrifa íhlutinn sem var fyrir(eyðir og býr til nýjan) en notandi er látinn staðfesta breytinga áður en hún er gerð.
+
+Forritið býr til, eyðir, breytir lit, prentar og er með hjálp skipun sem sýnir notanda valmöguleikana sem hann hefur og hvernig nota eigi skipanir.
