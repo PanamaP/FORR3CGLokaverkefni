@@ -10,7 +10,16 @@
 
 03/12 - Planið er að klára hash klassan í dag. Fékk hjálp sem bjargaði mér alveg.
 
-08/12 - Ætla halda áfram með klassana, er búin að klára eyda fallid þar sem ég þurfti bara að bæta nokkrum línum við.
+08/12 - Ætla halda áfram með klassana, er búin að klára eyda       
+    fallid þar sem ég þurfti bara að bæta nokkrum línum við.
     15:08 - er ennþá í veseni hvernig ég vill gera breyta fallið.
     Hvernig það stendur núna er að það eyðir út því sem er í hylkinu og gerir nýtt í staðinn, en það er ekkert sem tékkar hvernig íhlutur er fyrir.
     16:25 - held mig við það að eyða og skrá nýtt í staðinn. notandi er látinn vita í menu áður en hann breytir og þarf að staðfesta. Er að vinna í menu núna.
+
+09/12 - Menu komið og allir klassar og föll sem þeim fylgja.
+    Þar sem skilinn eru á laug fyrir hádegi og ég mun vera vinna mest allan daginn á morgun í póstmiðstöðinni og það er brjálað að gera þar sem allir eru að panta pakka í heimsendingu núna, þá þarf ég helst að klára verkefnið í dag.
+    Ég er búinn með kringum 80% af verkefninu og er sáttur með það. Ég vildi þó að ég hefði haft meiri tíma út önnina til að læra betur á c++ og mun mjög líklega taka auka udemy course til að ná þessu betur.
+
+
+
+    
